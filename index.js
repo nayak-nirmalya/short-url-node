@@ -10,6 +10,8 @@ const mongoDB_URL = process.env.MONGODB_URL;
 
 connectToMongoDB(mongoDB_URL).then(() => console.log("MongoDB Connected."));
 
+app.use(express.json());
+
 app.use("/url", urlRoute);
 
 app.listen(PORT, () => {
