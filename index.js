@@ -6,6 +6,9 @@ const { connectToMongoDB } = require("./connnect");
 
 const app = express();
 const PORT = 8001;
+const mongoDB_URL = process.env.MONGODB_URL;
+
+connectToMongoDB(mongoDB_URL).then(() => console.log("MongoDB Connected."));
 
 app.use("/url", urlRoute);
 
